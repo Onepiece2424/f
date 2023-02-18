@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h3>Action Mailer/Active job/Sidekiq/Redisを用いた非同期なメール送信アプリの作成</h3>
 
-Things you may want to cover:
+* Ruby&Rails version
+ruby 2.7.5
+Rails 6.1.7.2
 
-* Ruby version
+* ER図
+<img width="345" alt="スクリーンショット 2023-02-19 8 43 32" src="https://user-images.githubusercontent.com/79039664/219904657-af0a8c94-3266-46b7-8ce8-ff57af1843a6.png">
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* 使用技術
+ActionMailer
+Sidekiq
+Redis
+Active Job
