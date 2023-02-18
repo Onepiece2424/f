@@ -12,31 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :to %>
+    <%= form.label :to, "受取人" %>
     <%= form.text_field :to %>
   </div>
 
   <div class="field">
-    <%= form.label :from %>
+    <%= form.label :from, "差出人" %>
     <%= form.text_field :from %>
   </div>
 
   <div class="field">
-    <%= form.label :subject %>
+    <%= form.label :subject, "メールタイトル" %>
     <%= form.text_field :subject %>
   </div>
 
   <div class="field">
-    <%= form.label :body %>
+    <%= form.label :body, "メール内容" %>
     <%= form.text_area :body %>
   </div>
 
   <div class="field">
-    <%= form.label :sent_at %>
+    <%= form.label :sent_at, "送信時間の設定" %>
     <%= form.datetime_select :sent_at %>
   </div>
-
+  <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "メール送信" %>
   </div>
+  <br>
 <% end %>
