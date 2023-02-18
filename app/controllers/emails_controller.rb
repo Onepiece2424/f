@@ -25,6 +25,10 @@ class EmailsController < ApplicationController
 
     respond_to do |format|
       if @email.save
+
+        # EメールのJob
+        SendEmailJob.set(wait_until: @email.sent_at).perform_later(@email.id)
+
         format.html { redirect_to email_url(@email), notice: "Email was successfully created." }
         format.json { render :show, status: :created, location: @email }
       else
