@@ -36,6 +36,10 @@ class EmailsController < ApplicationController
   def update
     respond_to do |format|
       if @email.update(email_params)
+
+        # EメールのJob
+        SendEmailJob.set(wait_until: @email.sent_at).perform_later(@email)
+        
         format.html { redirect_to email_url(@email), notice: "Email was successfully updated." }
         format.json { render :show, status: :ok, location: @email }
       else
