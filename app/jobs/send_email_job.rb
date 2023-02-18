@@ -1,8 +1,7 @@
 class SendEmailJob < ApplicationJob
   queue_as :default
 
-  def perform(*args)
-    email = Email.find(12)
+  def perform(email)
     puts 'メールです！'
     puts 'タイトル：' + email.subject
 

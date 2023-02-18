@@ -1,6 +1,6 @@
 class EmailMailer < ApplicationMailer
   def send_mail(email)
-    @email = Email.find(12)
+    @email = email
     mail(
       from: 'system@example.com',
       to:   'manager@example.com',
