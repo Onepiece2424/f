@@ -1,25 +1,20 @@
 class EmailsController < ApplicationController
   before_action :set_email, only: %i[ show edit update destroy ]
 
-  # GET /emails or /emails.json
   def index
     @emails = Email.all
   end
 
-  # GET /emails/1 or /emails/1.json
   def show
   end
 
-  # GET /emails/new
   def new
     @email = Email.new
   end
 
-  # GET /emails/1/edit
   def edit
   end
 
-  # POST /emails or /emails.json
   def create
     @email = Email.new(email_params)
 
@@ -38,7 +33,6 @@ class EmailsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /emails/1 or /emails/1.json
   def update
     respond_to do |format|
       if @email.update(email_params)
@@ -51,7 +45,6 @@ class EmailsController < ApplicationController
     end
   end
 
-  # DELETE /emails/1 or /emails/1.json
   def destroy
     @email.destroy
 
@@ -62,12 +55,10 @@ class EmailsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_email
       @email = Email.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def email_params
       params.require(:email).permit(:to, :from, :subject, :body, :sent_at)
     end
