@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # sidekiqの管理画面のルーティング
+  require 'sidekiq/web'
+  mount Sidekiq::Web, at: "/sidekiq"
+
   resources :emails
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
