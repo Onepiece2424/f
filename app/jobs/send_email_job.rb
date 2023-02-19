@@ -5,6 +5,6 @@ class SendEmailJob < ApplicationJob
     puts 'メールきたで〜〜〜〜'
     puts 'メールタイトル：' + email.subject
 
-    EmailMailer.send_mail(email).deliver_now
+    EmailMailer.send_mail(email).deliver_later
   end
 end
